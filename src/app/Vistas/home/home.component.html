@@ -1,0 +1,96 @@
+
+
+         <!-- inicio Conenido-->
+                <!--seccion 1-->
+         <div id="content">
+             <section class="py-3">
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-lg-9">
+                             <h1 class="font-weight-bold mb-0">Bienvenido Arauz</h1>
+                             <p class="lead text-muted">Revisar la ultima informacion</p>
+                         </div>
+                         <div class="col-lg-3 d-flex">
+                             <button class="btn btn-primary w-100 align-self-center"> Descargar Reportes</button>
+                         </div>
+
+                     </div>
+                 </div>
+             </section>
+             
+             <!--Seccion 2-->
+
+             <section class="bg-mix">
+                 <div class="container">
+                     <div class="card">
+                     <div class="card-body"><h5 class="titleColor font-weight-bold">Mis Cuentas</h5>
+                         <div class="row">
+                             <div class="col-lg-3 col-md-6 d-flex stat_linea my-3" *ngFor="let item of MisCuentas">
+                                 <div class="mx-auto">
+                                     <h6 class="text-muted">{{item.Name_cuenta}}</h6>
+                                     <h3 class="font-weight-bold">{{item.Dinero}} <a><i class="ion-social-usd lead"></i></a></h3>
+                                     <h6 class="text-success"> <i class="icon ion-md-arrow-dropup-circle"></i> 50.50%</h6> 
+                                 </div>   
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             </section>
+
+             <!--Seccion 3-->
+             <section class="bg-grey">
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-lg-8 my-3"> <!--Grafico-->
+                             <div class="card">
+                                 <div class="card-header bg-light">
+                                     <h6 class="font-weight-bold mb-0">Movimientos de dinero en mis cuentas </h6>
+                                 </div>
+                                 <div class="card-body">
+                                    <div class="chart-wrapper">
+                                        <canvas id="canvas">
+                                            {{chart}}
+                                        </canvas>
+                                      
+                                        <!--<canvas baseChart  
+                                        [datasets]="barChartData"
+                                        [labels]="barChartLabels"
+                                        [options]="barChartOptions"
+                                        [plugins]="barChartPlugins"
+                                        [legend]="barChartLegend"
+                                        [chartType]="barChartType"
+                                        [colors]="chartColors">
+                                      </canvas>-->
+                                    </div>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <div class="col-lg-4 my-3"><!--Tabla de ventas-->
+                            <div class="card rounded-0">
+                                <div class="card-header bg-light">
+                                    <h6 class="font-weight-bold">Movimientos recientes</h6>
+                                </div>
+                                <div class="card-body pt-2">
+                                   <!--price 1-->
+                                     <div class="d-flex border-bottom py-2" *ngFor="let item of MisMRecientes">
+                                         <div class="d-flex mr-3"> 
+                                             <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
+                                         </div>
+                                         <div class="align-self-center">
+                                             <h6 class="d-inline-block mb-0">{{item.Cuenta}}</h6><span class="badge badge-success ml-2">{{item.Fecha}}</span>
+                                             <small class="d-block text-muted">${{item.Monto |  number:'0.2-2'}} </small>
+                                         </div>
+                                     </div>
+                                     <button class="btn btn-primary w-100"> Ver todos</button>
+                                </div>
+                            </div>
+                         </div>
+                     </div>
+                  </div>
+                </section>
+         </div>
+      
+          <!-- Fin Conenido--> 
+     

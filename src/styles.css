@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*variables globales */
+:root{
+    --primary1:#111B54;
+    --primary2:#3df83d;
+    --prmary_light:#192a8a;
+    --light: #ffffff;
+    --grey:#efefef ;
+    --greyOscuro:#4b4b4b ;
+    --griss:#585858 ;
+    --colorTitulos:#03105e;
+    --blanco:white;
+    
+  
+
+}
+
+/*color fondo de numero de la paginacion */
+.ngx-pagination .current {
+    background-color:var(--primary1) !important;  
+}
+

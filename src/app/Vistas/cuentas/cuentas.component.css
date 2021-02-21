@@ -1,0 +1,195 @@
+
+
+/*Clases de boostrap editadas*/
+
+.bg-primary{
+    background-color: var(--primary1) !important;
+
+}
+
+.bg-light{
+    background-color: var(--light) !important;
+}
+.bg-mix{
+    background: linear-gradient(180deg, var(--light) 50%, var(--grey)0);
+}
+
+.bg-grey{
+    background-color: var(--grey) !important;
+}
+
+.btn{
+    border: none;
+}
+
+.btn-primary {
+    background-color:var(--primary1);
+  
+}
+
+.btn.btn-primary:active,
+.btn.btn-primary::selection,
+.btn.btn-primary:focus {
+    background-color:var(--primary1) !important;  
+    outline: none;
+
+   
+}
+.btn.btn-primary:hover{
+    background-color:var(--prmary_light) !important;  
+}
+/*fin btn editadas*/
+
+.contenido{
+    display: grid;
+    height:100vh;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: 5rem 1rem 1rem 1rem ;
+    grid-gap: 2rem;
+    grid-template-areas: "titulo titulo titulo titulo"
+                          "cardscuentas cardscuentas cardscuentas cardscuentas";
+    font-family: 'Mulish', sans-serif;
+    font-weight: 300;
+    padding: 10px;
+}
+#titulo{
+    grid-area: titulo;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.btnAgregar{
+    align-self: center;
+    text-align: end;
+}
+#cardscuentas{
+    grid-area:cardscuentas ;
+}
+
+.contenido-cuentas{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-gap: 1rem;
+padding: 20px;
+/*background: linear-gradient(180deg,rgb(255, 255, 255) 50%, var(--primary1) 50%);*/
+/*background: linear-gradient(180deg, var(--primary1) 50%, var(--primary1) 50%);*/
+/*background: linear-gradient(180deg,rgb(255, 255, 255) 50%, rgb(255, 255, 255) 50%);*/
+background: linear-gradient(180deg, rgb(255, 255, 255) 10%, #cccbcbad 100%);
+border-radius: 15px;
+
+}
+.card{
+    height: 150px;
+    transition:0.5s ease; /*hace que la transicion no sea brusca*/
+    cursor:pointer; /*cursos punt*/
+}
+.card:hover{
+    transform:scale(1.05); /*hace salir el card*/
+    box-shadow: -1px -1px 15px  var(--primary1);
+    --primary1:var( --prmary_light);
+    --greyOscuro:var(--primary2);
+    --blanco:var(--griss);
+}
+.cabezeraData{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "datos"
+                         "opciones";
+    
+
+}
+
+
+.datos{
+    padding: 10px;
+    grid-area: datos;
+    
+}
+.datos > #cuenta{
+    color:var(--primary1);
+}
+.datos > #money{
+    color:var(--greyOscuro);
+}
+
+.opciones{
+    text-align: end;
+    padding: 10px;
+
+}
+.opciones a{
+    margin: 10px;
+    font-size: x-large;
+    color: var(--blanco);
+ 
+
+}
+
+.IMG{
+    padding: 10px;
+    text-align: end;
+}
+
+.IMG a{
+    font-size: xx-large;
+    color: var(--primary1);
+}
+
+
+@media only screen and (max-width:900px){
+    .contenido-cuentas{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 1rem;
+        padding: 30px;
+        background: linear-gradient(180deg, rgb(255, 255, 255) 10%, #cccbcbad 100%);
+        border-radius: 15px;
+        
+        }
+}
+
+@media only screen and (max-width:400px){
+    .contenido-cuentas{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 1rem;
+        padding: 30px;
+        background: linear-gradient(180deg, rgb(255, 255, 255) 10%, #cccbcbad 100%);
+        border-radius: 15px;
+        
+        }
+
+        #titulo{
+            grid-area: titulo;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+        }
+        #cardscuentas{
+            margin-top: 34px;
+        }
+    
+        .btnAgregar{
+          
+            text-align: center;
+        }
+
+}
+
+
+@media only screen and (max-width:500px){
+ 
+    .contenido-cuentas{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 1rem;
+        padding: 30px;
+        background: linear-gradient(180deg, rgb(255, 255, 255) 10%, #cccbcbad 100%);
+        border-radius: 15px;
+        
+        }
+
+    #cardscuentas{
+        margin-top: 34px;
+    }
+    
+}
+

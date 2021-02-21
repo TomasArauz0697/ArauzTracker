@@ -1,0 +1,101 @@
+<div class="content">
+
+
+
+<div class="d-flex">
+    <!--Inicio sidebar-->
+  
+    <!--Fin sidebar-->
+   
+     <div class="w-100 p-1">
+          <!--Inicio navbar-->
+        <!--<app-nav></app-nav>-->
+         <!--Fin navbar-->
+
+         <!-- inicio Conenido-->
+                <!--seccion 1-->
+         <div id="content" class="p-0">
+             <section class="py-3">
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-lg-9">
+                             <h1 class="font-weight-light mb-0">Nuestros Ingresos</h1>
+                             <p class="lead text-muted">Administremos los ingresos de hoy</p>
+                         </div>
+                         <div class="col-lg-3 d-flex">
+                             <button class="btn btn-primary w-100 align-self-center" data-toggle="modal" data-target="#exampleModalCenterI">Añadir Ingresos </button>
+                         </div>
+
+                     </div>
+                 </div>
+             </section>
+             
+             <!--Seccion 2-->
+
+             <section class="bg-mix">
+                 <div class="container">
+                     <div class="card">
+                     <div class="card-body">
+                         <h5 class="titleColor font-weight-bold">Mis Cuentas</h5>
+                         <div class="row">
+                            <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Cuenta</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Monto (PAB)</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Opciones</th>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let item of Misingresos | paginate: { itemsPerPage: 5, currentPage: page} ; let indice=index ;trackBy:trackByFn">
+                                    <th scope="row">{{indice+1}}</th>    
+                                    <td>{{item.Cuenta}}</td>
+                                    <td>{{item.Fecha}}</td> 
+                                    <td>{{ item.Monto |  number:'0.2-2' }} $</td>
+                                    <td>{{item.Descripcion}}</td>
+                                    <td >
+                                         <a><button class="btn btn-danger linea m-2" (click)="onEliminar(item._id)">Eliminar</button></a> 
+                                         <a><button class="btn btn-info linea m-2"  (click)="onEditar(item._id,item.Cuenta,item.Fecha,item.Monto,item.Descripcion)" data-toggle="modal" data-target="#exampleModalCenterEditar" >Editar</button></a>
+                                    </td>
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                            </div>
+                            <pagination-controls (pageChange)="page = $event" 
+                              previousLabel="Previous"
+                              nextLabel="Next"
+                              responsive="true">
+                            </pagination-controls> 
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             </section>
+
+         </div>
+          <!-- Fin Conenido--> 
+     </div>
+
+     <!--Modal Ingresos nuevos-->
+     <app-modal-ingresos></app-modal-ingresos>
+
+     <!--Modal editar -->
+    <app-modal-editar-i-g  
+    
+    [ID]="this.ID" 
+    [Cuenta]="this.cuenta"
+    [Fecha]=" this.fecha"
+    [Monto]="this.monto"
+    [Descripcion]="this.descripcion"
+    [vista]="this.vista"
+    
+    ></app-modal-editar-i-g>
+
+    
+</div>

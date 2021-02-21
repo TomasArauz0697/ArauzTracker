@@ -1,0 +1,54 @@
+  <div class="contenido">
+     <div id="titulo">
+        <div class="tituloMain">
+          <h1 class="font-weight-light">Mis Cuentas</h1>
+          <p>Configuremos nuestras finazas</p>
+        </div>
+        <div class="btnAgregar">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterI"><a><i class="ion-plus-round"></i></a> Nueva Cuenta</button>
+        </div>
+     </div>
+     <div id="cardscuentas">
+       <div class="contenido-cuentas" >
+              <div class="card" *ngFor="let item of MisCuentas">
+                <div class="cabezeraData" >
+                    <div class="datos"> 
+                        <h5 id="cuenta"><a><i class="ion-ios-analytics"></i></a>{{item.Name_cuenta}}</h5>
+                        <p id="money">{{item.Dinero}} <a><i class="ion-social-usd"></i></a>  </p>
+                    </div>
+
+                  <div class="opciones">
+                    <a><i class="ion-code-working" data-toggle="modal" data-target="#exampleModalCenterT" (click)="onTrasfer(item._id,item.Name_cuenta,item.Dinero)"></i></a> 
+                    <a ><i class="ion-edit" data-toggle="modal" data-target="#exampleModalCenterE" (click)="onEditar(item._id,item.Name_cuenta,item.Dinero)"  ></i></a> 
+                    <a (click)="onDelete(item._id)"><i class="ion-android-delete"></i></a> 
+                  </div>
+
+                </div>
+                  <div class="IMG"> 
+                  <a><i class="ion-ios-pulse-strong"></i></a> 
+                  </div> 
+             </div>     
+     </div>
+
+        <!--Modal cuenta nueva-->
+        <app-modals-nueva-cuenta></app-modals-nueva-cuenta>
+
+
+        <!--modal editar cuenta-->
+        <app-modal-editar-cuenta
+          [ID]="this.ID" 
+          [Cuenta]="this.cuenta"
+          [Monto]="this.monto"
+
+        ></app-modal-editar-cuenta>
+
+
+         <!--Modal transferir cuenta-->
+         <app-modal-transferencia
+         [ID]="this.ID" 
+         [Cuenta]="this.cuenta"
+         [Monto]="this.monto"
+         ></app-modal-transferencia>
+
+
+  </div>

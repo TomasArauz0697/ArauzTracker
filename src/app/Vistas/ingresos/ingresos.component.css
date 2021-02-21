@@ -1,0 +1,58 @@
+/*Clases de boostrap editadas*/
+
+.bg-primary{
+    background-color: var(--primary1) !important;
+
+}
+
+.bg-light{
+    background-color: var(--light) !important;
+}
+.bg-mix{
+    background: linear-gradient(180deg, var(--light) 50%, var(--grey)0);
+}
+
+.bg-grey{
+    background-color: var(--grey) !important;
+}
+
+.btn{
+    border: none;
+}
+
+.btn-primary {
+    background-color:var(--primary1);
+  
+}
+
+.btn.btn-primary:active,
+.btn.btn-primary::selection,
+.btn.btn-primary:focus {
+    background-color:var(--primary1) !important;  
+    outline: none;
+
+   
+}
+.btn.btn-primary:hover{
+    background-color:var(--prmary_light) !important;  
+}
+
+.linea
+{
+    display: inline-block;
+}
+
+.btn-danger{
+    background-image: linear-gradient(to right,var(--primary1), rgb(255, 93, 93));
+    border-radius: 15px;
+}
+.btn-info{
+    background-image: linear-gradient(to right,var(--primary1), rgb(44, 72, 95));
+    border-radius: 15px;
+}
+
+#content{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom:5rem;
+}
